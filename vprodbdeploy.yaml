@@ -18,7 +18,7 @@ spec:
         - name: vprodb
           image: soumyakamani/soumyadb:V1
           args:
-            - "ignore-db-dir=lost+found"
+            - "--ignore-db-dir=lost+found"
           volumeMounts:
             - mountPath: var/lib/mysql
               name: vpro-db-data
@@ -35,6 +35,6 @@ spec:
         zone: ap-south-1a
       volumes:
         - name: vpro-db-data
-          awsElasticBLockStore:
+          awsElasticBlockStore:
             volumeID: vol-02a258c44dedff58f
             fsType: ext4
